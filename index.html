@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Virginia Haskell, Massage Therapist | Brattleboro, VT</title>
+<meta name="description" content="Therapeutic massage and Reiki in Brattleboro, Vermont. Swedish massage, myofascial release, and stretching to address pain and tension. 192 Putney Road. Book online.">
+<link rel="canonical" href="https://virginiahaskell.com/">
+
+<!-- Open Graph: controls how the link looks when shared on Facebook, where most of her traffic comes from -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Virginia Haskell, Massage Therapist — Brattleboro, VT">
+<meta property="og:description" content="Therapeutic massage and Reiki in Brattleboro, Vermont. Book online.">
+<meta property="og:url" content="https://virginiahaskell.com/">
+<meta property="og:image" content="https://virginiahaskell.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Massage table beside an open glass door looking onto a garden.">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+  :root{
+    --ink:#22201d;
+    --ink-soft:#4a453f;
+    --bg:#faf8f5;
+    --card:#ffffff;
+    --accent:#3f5f4f;
+    --accent-dark:#2d453a;
+    --line:#e3ded6;
+    --focus:#a4632a;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,'Iowan Old Style','Palatino Linotype',Palatino,serif;
+    font-size:1.15rem;
+    line-height:1.65;
+  }
+  .wrap{max-width:46rem;margin:0 auto;padding:0 1.35rem}
+
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{left:1rem;top:1rem;position:fixed;z-index:99;background:var(--card);
+    padding:.75rem 1rem;border:3px solid var(--focus);border-radius:6px}
+
+  header{background:var(--accent-dark);color:#fff;padding:3rem 0 2.6rem;text-align:center}
+  header h1{font-size:2.1rem;line-height:1.2;margin:0 0 .4rem;font-weight:normal;letter-spacing:.01em}
+  /* explicit #fff: the global p{color:--ink-soft} rule matches these directly and
+     would otherwise beat the colour inherited from header{color:#fff} */
+  header .tag,header .where{color:#fff}
+  header .tag{font-size:1.15rem;margin:0;opacity:.92}
+  header .where{font-size:1rem;margin:.9rem 0 0;opacity:.8;letter-spacing:.08em;text-transform:uppercase}
+
+  /* --- the booking bar: her #1 conversion path, above everything --- */
+  .book-bar{background:var(--accent);padding:1.5rem 0;text-align:center}
+  .btn{
+    display:inline-block;background:#fff;color:var(--accent-dark);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    font-size:1.15rem;font-weight:600;text-decoration:none;
+    padding:1rem 2.1rem;border-radius:4px;border:2px solid #fff;
+    min-height:3rem;
+  }
+  .btn:hover{background:var(--accent-dark);color:#fff}
+  /* amber focus ring is 2.2:1 against the green bars; white reads there */
+  .btn:focus-visible{outline:4px solid #fff;outline-offset:3px}
+  .book-bar .alt{display:block;margin:.9rem 0 0;color:#fff;font-size:1rem;opacity:.95}
+  .book-bar .alt a{color:#fff}
+
+  main{padding:3rem 0 1rem}
+  section{margin:0 0 3.4rem}
+  h2{
+    font-size:1.55rem;font-weight:normal;margin:0 0 1.1rem;
+    padding-bottom:.5rem;border-bottom:2px solid var(--line);
+  }
+  h3{font-size:1.2rem;margin:1.6rem 0 .3rem;font-weight:normal}
+  p{margin:0 0 1.1rem;color:var(--ink-soft)}
+  a{color:var(--accent-dark);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+  a:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:2px}
+
+  .rates{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.4rem 1.4rem;margin:0 0 1.2rem}
+  .rate{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    padding:1rem 0;border-bottom:1px solid var(--line)}
+  .rates .rate:last-child{border-bottom:none}
+  .rate .len{color:var(--ink-soft)}
+  .rate .amt{font-size:1.3rem;white-space:nowrap;color:var(--ink)}
+  .svc{margin:0 0 2rem}
+
+  .addr{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--accent);
+    border-radius:6px;padding:1.3rem 1.4rem;margin:0 0 1.2rem;font-style:normal}
+  .addr .street{font-size:1.3rem;display:block;margin-bottom:.2rem}
+
+  .contact{list-style:none;padding:0;margin:0 0 1.2rem}
+  .contact li{padding:.55rem 0;border-bottom:1px solid var(--line)}
+  .contact li:last-child{border-bottom:none}
+  .contact .label{display:inline-block;min-width:6.5rem;color:var(--ink-soft)}
+
+  .note{background:#fdf6ec;border:1px solid #e8d5b7;border-radius:6px;padding:1rem 1.2rem;font-size:1.05rem}
+
+  .policy{font-size:1.05rem}
+  .policy h3{font-size:1.1rem;margin:1.3rem 0 .2rem}
+
+  .sched{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+  .sched iframe{width:100%;height:800px;border:0;display:block}
+
+  /* --- phone-only sticky bar: Book and Text stay reachable from anywhere on an
+         11,000 px page. Hidden on wide screens, and hidden by a few lines of JS
+         while the Acuity calendar itself is on screen. Without JS it simply stays. --- */
+  .stick{display:none}
+  @media (max-width:40rem){
+    .stick{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:.5rem;
+      padding:.45rem .75rem;
+      background:var(--accent);border-top:1px solid rgba(255,255,255,.25)}
+    .stick a{flex:1;text-align:center;padding:.55rem .5rem;font-size:1rem;min-height:2.75rem;line-height:1.5}
+    .stick[hidden]{display:none}
+    /* reserve room under the footer for the bar, in the footer's own green */
+    /* body>footer outranks the plain footer shorthand declared further down */
+    body>footer{padding-bottom:6.2rem}
+  }
+
+  footer{background:var(--accent-dark);color:#fff;padding:2.2rem 0;margin-top:2rem;font-size:1rem}
+  footer p{color:#fff;opacity:.9;margin:0 0 .5rem}
+  footer a{color:#fff}
+
+
+  /* --- nav: lets a first-time visitor see the shape of the page --- */
+  .nav{background:var(--card);border-bottom:1px solid var(--line);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:1rem}
+  .nav ul{list-style:none;margin:0 auto;padding:.85rem 1.35rem;max-width:46rem;
+    display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;justify-content:center}
+  /* .6rem vertical padding lifts each link past the 44 px touch-target floor */
+  .nav a{color:var(--accent-dark);text-decoration:none;padding:.6rem .2rem;display:inline-block}
+  .nav a:hover{text-decoration:underline}
+  .nav a:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:2px}
+
+  /* --- "which session" picker --- */
+  .pick{display:grid;gap:1rem;margin:0 0 1.3rem}
+  .pick .opt{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--accent);
+    border-radius:6px;padding:1.1rem 1.3rem}
+  .pick .opt h3{margin:0 0 .35rem;font-size:1.15rem}
+  .pick .opt p{margin:0;font-size:1.05rem}
+
+  /* --- first-visit walkthrough --- */
+  .steps{counter-reset:step;list-style:none;padding:0;margin:0 0 1.3rem}
+  .steps li{position:relative;padding:0 0 1.15rem 3rem;margin:0}
+  .steps li:last-child{padding-bottom:0}
+  .steps li::before{counter-increment:step;content:counter(step);
+    position:absolute;left:0;top:.05rem;width:2.05rem;height:2.05rem;border-radius:50%;
+    background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:1rem}
+  .steps strong{display:block;color:var(--ink)}
+  .steps span{color:var(--ink-soft);font-size:1.05rem}
+
+  /* --- FAQ: native details/summary, no JavaScript --- */
+  .faq{border-top:1px solid var(--line)}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{cursor:pointer;padding:1rem 2rem 1rem 0;position:relative;list-style:none;
+    color:var(--ink);font-size:1.1rem}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:.3rem;top:.85rem;
+    font-size:1.5rem;color:var(--accent);line-height:1}
+  .faq details[open] summary::after{content:"\2212"}
+  .faq summary:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:3px}
+  .faq details p{margin:0 0 1rem;padding-right:2rem;font-size:1.05rem}
+
+  /* --- photographs. width/height are on the <img> so the page does not reflow
+         as they load, and everything below the fold is lazy so the booking bar
+         is never waiting on a picture. --- */
+  .shot{margin:0 0 1.5rem}
+  .shot img{width:100%;height:auto;display:block;border-radius:6px;border:1px solid var(--line)}
+  .shot figcaption{font-size:.98rem;color:var(--ink-soft);padding:.55rem .2rem 0;line-height:1.45}
+  .shots{display:grid;gap:1rem;margin:0 0 1.5rem}
+  .shots .shot{margin:0}
+  @media (min-width:40rem){.shots{grid-template-columns:1fr 1fr}}
+
+
+  @media (min-width:40rem){
+    body{font-size:1.2rem}
+    header{padding:4.5rem 0 3.5rem}
+    header h1{font-size:2.7rem}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    html{scroll-behavior:smooth}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap">
+    <h1>Virginia Haskell</h1>
+    <p class="tag">Massage Therapist &amp; Reiki Practitioner</p>
+    <p class="where">Brattleboro, Vermont</p>
+  </div>
+</header>
+
+<div class="book-bar">
+  <div class="wrap">
+    <a class="btn" href="https://app.acuityscheduling.com/schedule.php?owner=14975767">Book an appointment</a>
+    <span class="alt">
+      Or text <a href="sms:+14138249194">(413) 824-9194</a> &middot;
+      <a href="https://m.me/VirginiaHaskellMassage">Message on Facebook</a>
+    </span>
+  </div>
+</div>
+
+<nav class="nav" aria-label="Sections of this page">
+  <ul>
+    <li><a href="#services">Services &amp; Rates</a></li>
+    <li><a href="#choose">Which session?</a></li>
+    <li><a href="#first">Your first visit</a></li>
+    <li><a href="#visit">Find the office</a></li>
+    <li><a href="#faq">Questions</a></li>
+    <li><a href="#book">Book</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+<div class="wrap">
+
+  <section id="about">
+    <h2>Welcome</h2>
+
+    <figure class="shot">
+      <img src="images/room-table.jpg" width="1200" height="1600"
+           alt="The treatment room: a massage table made up with a floral sheet and face
+                cradle, against pine-panelled walls, with a patterned rug, plants and a
+                small shelf of oils.">
+    </figure>
+
+    <p>I use a combination of techniques to help clients achieve their goals &mdash; frequently
+      Swedish massage, myofascial release, stretching, and relaxation massage to address pain
+      and tension. I receive great satisfaction from helping my clients alleviate pain and
+      reduce tension.</p>
+    <p><strong>Massage</strong> &mdash; trained and educated at The Massage School, Easthampton, MA.<br>
+      <strong>Reiki</strong> &mdash; trained and attuned at Sanctuary Healing Arts, Amherst, MA.</p>
+    <p>My office is on Putney Road in Brattleboro, a vibrant, healthy community on the
+      Connecticut River. It sits right off Interstate 91 and is easily reached from Keene, NH,
+      Greenfield and Northampton, MA, and the rural areas north and west.</p>
+
+    <figure class="shot">
+      <img src="images/portrait.jpg" width="1200" height="1600" loading="lazy"
+           alt="Virginia Haskell, standing outdoors in the garden beside her studio.">
+      <figcaption>Virginia Haskell</figcaption>
+    </figure>
+  </section>
+
+  <section id="services">
+    <h2>Services &amp; Rates</h2>
+    <p>Investing in massage is an investment in your health.</p>
+
+    <div class="svc">
+      <h3>Massage</h3>
+      <p>Swedish massage, myofascial release, stretching, and relaxation massage, combined to
+        address pain and tension. Sessions take place in a warm, quiet room, and you are
+        properly draped throughout.</p>
+      <div class="rates">
+        <div class="rate"><span class="len">60 minutes</span><span class="amt">$100</span></div>
+        <div class="rate"><span class="len">90 minutes</span><span class="amt">$125</span></div>
+        <div class="rate"><span class="len">120 minutes</span><span class="amt">$150</span></div>
+      </div>
+    </div>
+
+    <div class="svc">
+      <h3>Hot stone massage</h3>
+      <p>Heated basalt stones, used alongside the hands, to warm and loosen tight muscle before
+        and during the work. Especially welcome in a Vermont winter.</p>
+      <div class="rates">
+        <div class="rate"><span class="len">60 minutes</span><span class="amt">$100</span></div>
+        <div class="rate"><span class="len">90 minutes</span><span class="amt">$125</span></div>
+      </div>
+    </div>
+
+    <div class="svc">
+      <h3>Reiki</h3>
+      <div class="rates">
+        <div class="rate"><span class="len">60 minutes</span><span class="amt">$100</span></div>
+      </div>
+    </div>
+
+    <p><a href="https://www.facebook.com/VirginiaHaskellMassage/">Check Facebook for current
+      promotions&nbsp;&rarr;</a></p>
+  </section>
+
+  <section id="choose">
+    <h2>Which session should I book?</h2>
+    <p>If you are not sure, book 90 minutes. It is the length most people settle on once they
+      have tried all three.</p>
+
+    <div class="pick">
+      <div class="opt">
+        <h3>60 minutes</h3>
+        <p>One area, worked properly &mdash; neck and shoulders, or a low back that has been
+          complaining. Enough time to make a real difference in one place, not enough to cover
+          the whole body. A good regular appointment once you know your trouble spots.</p>
+      </div>
+      <div class="opt">
+        <h3>90 minutes</h3>
+        <p>Full body, without rushing any of it. Or one stubborn area with the time to work
+          slowly and let it actually release. This is the one I would suggest for a first
+          visit, or if it has been a while.</p>
+      </div>
+      <div class="opt">
+        <h3>120 minutes</h3>
+        <p>Full body plus detailed work on a problem area. Worth it for long-standing pain,
+          for recovery from an injury, or when you have gone a long time without and
+          everything needs attention.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="first">
+    <h2>Your first visit</h2>
+    <p>If you have never had a professional massage, or never had one here, this is what the
+      appointment actually looks like. None of it should be a surprise.</p>
+
+    <ol class="steps">
+      <li><strong>You book a time.</strong>
+        <span>Online through the calendar below, or by text. You do not have to call.</span></li>
+      <li><strong>You arrive a few minutes early.</strong>
+        <span>Five or ten minutes is plenty &mdash; enough that you are not rushing in.</span></li>
+      <li><strong>We talk first.</strong>
+        <span>A short conversation about what hurts, what you want from the session, anything
+          in your health history that matters, and anywhere you would rather I did not
+          work.</span></li>
+      <li><strong>You undress to your own comfort.</strong>
+        <span>I leave the room while you do. How much you take off is genuinely up to you, and
+          you stay covered by a sheet throughout &mdash; only the area being worked on is
+          uncovered.</span></li>
+      <li><strong>We check the pressure as we go.</strong>
+        <span>Say something any time. Lighter, deeper, skip that spot, stop altogether &mdash;
+          none of it is rude and none of it ruins the session.</span></li>
+      <li><strong>We talk briefly afterward.</strong>
+        <span>Get up slowly and take your time. Then a minute on what I found and anything
+          worth doing before next time.</span></li>
+    </ol>
+  </section>
+
+  <section id="visit">
+    <h2>Find the Office</h2>
+
+    <address class="addr">
+      <span class="street">192 Putney Road</span>
+      Brattleboro, VT 05301
+    </address>
+
+    <p><a href="https://www.google.com/maps/dir/?api=1&amp;destination=192+Putney+Road+Brattleboro+VT+05301">Get
+      directions&nbsp;&rarr;</a></p>
+
+    <div class="shots">
+      <figure class="shot">
+        <img src="images/room-garden.jpg" width="1200" height="1600" loading="lazy"
+             alt="The treatment room with the glass door open onto a green garden, a
+                  recliner beside it.">
+      </figure>
+      <figure class="shot">
+        <img src="images/room-stove.jpg" width="1600" height="1200" loading="lazy"
+             alt="A lit gas stove in the corner of the treatment room, beside the table.">
+      </figure>
+    </div>
+
+    <h3>Hours</h3>
+    <p><strong>By appointment only</strong>, seven days a week. Use the booking calendar below
+      to see what is actually open.</p>
+
+    <h3>Contact</h3>
+    <ul class="contact">
+      <li><span class="label">Text</span><a href="sms:+14138249194">(413) 824-9194</a></li>
+      <li><span class="label">Email</span><a href="mailto:virginia.haskell@yahoo.com">virginia.haskell@yahoo.com</a></li>
+      <li><span class="label">Facebook</span><a href="https://www.facebook.com/VirginiaHaskellMassage/">Virginia Haskell, Massage Therapist</a></li>
+    </ul>
+    <p class="note">Text, email, or Facebook Messenger get the fastest response.
+      I am not always able to take voice calls.</p>
+  </section>
+
+  <section id="faq">
+    <h2>Questions people ask</h2>
+
+    <div class="faq">
+      <details>
+        <summary>How is this different from a massage at a spa?</summary>
+        <p>A spa massage is built around relaxation. This is therapeutic work &mdash; it starts
+          from what is actually bothering you and aims to change it. It can still be deeply
+          relaxing, and often is. But the session is planned around your shoulder rather than
+          around the ambience.</p>
+      </details>
+
+      <details>
+        <summary>Will it hurt?</summary>
+        <p>It should not. Work on a tight area can feel intense &mdash; a kind of good soreness
+          that eases as the muscle lets go &mdash; but there is a clear line between that and
+          pain, and we stay on the right side of it. Tell me the moment something crosses over.
+          Pain makes you brace, and bracing undoes the work.</p>
+      </details>
+
+      <details>
+        <summary>What should I wear? How undressed do I need to be?</summary>
+        <p>As much or as little as you are comfortable with. Many people undress completely,
+          many keep underwear on, and both are fine. You are under a sheet the whole session
+          and only the area being worked on is uncovered. I leave the room while you get on
+          the table.</p>
+      </details>
+
+      <details>
+        <summary>Should I talk during the session, or stay quiet?</summary>
+        <p>Whichever you prefer. Some people talk the whole hour, some say nothing after hello.
+          Neither is wrong and I will follow your lead. The one thing I do want to hear about
+          is pressure.</p>
+      </details>
+
+      <details>
+        <summary>Is there anything I should do before or after?</summary>
+        <p>Beforehand, try not to eat a heavy meal right before, and leave yourself enough time
+          that you are not arriving stressed. Afterward, drink some water and go easy for the
+          rest of the day if you can. Feeling a little tired or tender the next day is normal,
+          especially after deeper work.</p>
+      </details>
+
+      <details>
+        <summary>How often should I come?</summary>
+        <p>It depends what you are dealing with. Working through a specific injury or
+          long-standing pain usually means coming more often at first and spacing out as it
+          improves. For general upkeep, people tend to land somewhere between every two weeks
+          and once a month. We can work out what makes sense for you.</p>
+      </details>
+
+      <details>
+        <summary>What if I need to cancel?</summary>
+        <p>24 hours notice, so the time can be offered to someone else. The full policy,
+          including no-shows and late arrivals, is
+          <a href="#policies">further down this page</a>.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="book">
+    <h2>Book Online</h2>
+    <p>Pick a time that works for you. Booking is handled through Acuity Scheduling.</p>
+    <div class="sched">
+      <iframe id="acuity"
+        src="https://app.acuityscheduling.com/schedule.php?owner=14975767"
+        title="Book an appointment with Virginia Haskell"
+        allow="payment"
+        loading="lazy">
+      </iframe>
+    </div>
+    <!-- Acuity's own resizer: the only external script on the page. It listens for the
+         calendar's height and grows the iframe so a phone does not scroll inside a box. -->
+    <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
+    <p style="margin-top:1rem"><a href="https://app.acuityscheduling.com/schedule.php?owner=14975767">Open
+      the booking page in a new window&nbsp;&rarr;</a></p>
+  </section>
+
+  <section id="policies" class="policy">
+    <h2>Booking Policies</h2>
+
+    <p>Things come up, and I would rather tell you plainly how I handle it than leave you
+      guessing.</p>
+
+    <h3>Cancellations</h3>
+    <p>Please give me 24 hours notice if you need to cancel, so I can offer the time to
+      someone else. With less than 24 hours notice, I charge the full amount of the
+      appointment, payable before your next one.</p>
+
+    <h3>No-shows</h3>
+    <p>A missed appointment is charged in full, forgotten or otherwise.</p>
+
+    <h3>Late arrivals</h3>
+    <p>If you arrive late I may need to shorten your session, so that the appointments after
+      yours still start on time &mdash; and if it is late enough, there may not be enough time
+      to begin at all. Either way the full session is charged, so please give yourself a little
+      margin.</p>
+  </section>
+
+</div>
+</main>
+
+<div class="stick" id="stick">
+  <a class="btn" href="https://app.acuityscheduling.com/schedule.php?owner=14975767">Book</a>
+  <a class="btn" href="sms:+14138249194">Text</a>
+</div>
+<script>
+  // Hide the sticky bar while either the hero booking bar or the calendar itself is
+  // on screen: at the top of the page the big Book button already does the job.
+  // If this does not run, the bar simply stays, which is still correct.
+  (function(){
+    var bar=document.getElementById('stick');
+    if(!bar||!('IntersectionObserver' in window))return;
+    var seen={},targets=[document.querySelector('.book-bar'),document.getElementById('acuity'),
+                         document.getElementById('booking-stub')].filter(Boolean);
+    if(!targets.length)return;
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){seen[e.target.id||e.target.className]=e.isIntersecting;});
+      bar.hidden=Object.keys(seen).some(function(k){return seen[k];});
+    });
+    targets.forEach(function(t){io.observe(t);});
+  })();
+</script>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Virginia Haskell, Massage Therapist</strong><br>
+      192 Putney Road, Brattleboro, VT 05301<br>
+      <a href="sms:+14138249194">(413) 824-9194</a></p>
+    <p>&copy; 2026 Virginia Haskell</p>
+  </div>
+</footer>
+
+<!-- ============================================================
+     LOCAL SEO: structured data. This is what tells Google she is a
+     real business at a real address — the "show up in search" ask.
+     Deliberately OMITTED rather than guessed: geo coordinates, and any
+     credential or license designation. Opening hours omitted on purpose
+     too — "by appointment only" has no honest openingHours encoding, and
+     wrong structured data is worse than absent structured data.
+     ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "@id": "https://virginiahaskell.com/#business",
+  "name": "Virginia Haskell, Massage Therapist",
+  "founder": { "@type": "Person", "name": "Virginia Haskell" },
+  "description": "Therapeutic massage and Reiki in Brattleboro, Vermont. Swedish massage, myofascial release, stretching, and relaxation massage.",
+  "url": "https://virginiahaskell.com/",
+  "telephone": "+1-413-824-9194",
+  "email": "virginia.haskell@yahoo.com",
+  "priceRange": "$100-$150",
+  "currenciesAccepted": "USD",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "192 Putney Road",
+    "addressLocality": "Brattleboro",
+    "addressRegion": "VT",
+    "postalCode": "05301",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Brattleboro" },
+    { "@type": "City", "name": "Keene" },
+    { "@type": "City", "name": "Greenfield" },
+    { "@type": "City", "name": "Northampton" },
+    { "@type": "State", "name": "Vermont" }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/VirginiaHaskellMassage/"
+  ],
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://app.acuityscheduling.com/schedule.php?owner=14975767",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform"
+      ]
+    },
+    "result": { "@type": "Reservation", "name": "Massage appointment" }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      { "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Massage, 60 minutes" },
+        "price": "100.00", "priceCurrency": "USD" },
+      { "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Massage, 90 minutes" },
+        "price": "125.00", "priceCurrency": "USD" },
+      { "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Massage, 120 minutes" },
+        "price": "150.00", "priceCurrency": "USD" },
+      { "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Hot stone massage, 60 minutes" },
+        "price": "100.00", "priceCurrency": "USD" },
+      { "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Hot stone massage, 90 minutes" },
+        "price": "125.00", "priceCurrency": "USD" },
+      { "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Reiki, 60 minutes" },
+        "price": "100.00", "priceCurrency": "USD" }
+    ]
+  }
+}
+</script>
+
+</body>
+</html>
